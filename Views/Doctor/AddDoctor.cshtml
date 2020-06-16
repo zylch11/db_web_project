@@ -1,0 +1,50 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Doctor
+
+    <div>
+
+        <br />
+        <h1 class="text-info">Add a Doctor</h1>
+        <br />
+
+        <div class="container" style="padding:30px">
+            <form asp-action="Add" method="post" class="main-form needs-validation">
+
+                <div class="form-group">
+                    <label for="Name">Name</label>
+                    <input class="form-control" type="text" name="Name" value="" required />
+                </div>
+                <div class="form-group">
+                    <label for="Qualification">Qualification</label>
+                    <input class="form-control" type="text" name="Qualification" value="" required />
+                </div>
+                <div class="form-group">
+                    <label for="Age">Age</label>
+                    <input class="form-control" type="number" name="Age" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="CNIC">CNIC</label>
+                    <input class="form-control" type="number" name="CNIC" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="HospitalID">Hospital ID</label>
+                    <input class="form-control" type="number" name="HospitalID" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="Role">Role</label>
+                    <input class="form-control" type="text" name="Role" value="" />
+                </div>
+
+                <div>
+                        <button type="submit" class="btn btn-success text-white">Add</button>
+                        <a class="btn btn-primary text-white" asp-controller="Doctor" asp-action="Index" role="button">Back</a>
+                    
+                </div>
+            </form>
+        </div>
+
+    </div>

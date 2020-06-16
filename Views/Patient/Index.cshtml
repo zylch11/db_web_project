@@ -1,0 +1,50 @@
+﻿@model PatientViewModel
+@{
+    ViewData["Title"] = "Manage the Patients";
+}
+
+<br />
+<div class="container row p-0 m-0">
+    <div class="col-9">
+        <h2 class="text-info">Patients List</h2>
+    </div>
+    <div class="col-3">
+        <a asp-action="AddPatient" class="btn btn-info form-control text-white">Add a Patient</a>
+    </div>
+    <br />
+
+    @* Inserting the Table *@
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">CNIC</th>
+                <th scope="col">Hospital ID</th>
+                <th scope="col">Age</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Address</th>
+                <th scope="col">Ward ID</th>
+                <th scope="col">Misc.</th>
+            </tr>
+        </thead>
+
+
+        @foreach (var d in Model.Patients)
+        {
+    <tr>
+        <td>@d.Name</td>
+        <td>@d.CNIC</td>
+        <td>@d.HospitalId</td>
+        <td>@d.Age</td>
+        <td>@d.Gender</td>
+        <td>@d.Address</td>
+        <td>@d.WardId</td>
+        <td>
+            <a class="btn btn-success btn-sm" asp-action="EditPatient" asp-route-id="@d.Id">Edit</a>
+        </td>
+    </tr>
+        }
+    </table>
+
+
+</div>

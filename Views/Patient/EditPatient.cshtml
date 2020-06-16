@@ -1,0 +1,53 @@
+﻿@model PatientModel
+@{
+}
+
+div>
+
+<br />
+<h1 class="text-info">Edit Patient</h1>
+<br />
+
+<div class="container" style="padding:30px">
+    <form asp-action="Edit" method="post" class="main-form needs-validation">
+
+        <input type="hidden" name="Id" value="@Model.Id" />
+        <div class="form-group">
+            <label for="Name">Name</label>
+            <input class="form-control" type="text" name="Name" value="@Model.Name" required />
+        </div>
+        <div class="form-group">
+            <label for="CNIC">CNIC</label>
+            <input class="form-control" type="number" name="CNIC" value="@Model.CNIC" required />
+        </div>
+        <div class="form-group">
+            <label for="HospitalID">Hospital ID</label>
+            <input class="form-control" type="number" name="HospitalID" value="@Model.HospitalId" required />
+        </div>
+        <div class="form-group">
+            <label for="Age">Age</label>
+            <input class="form-control" type="number" name="Age" value="@Model.Age" required />
+        </div>
+        <div class="form-group">
+            <label for="Gender">Gender</label>
+            <input class="form-control" type="text" name="Gender" value="@Model.Gender" required />
+        </div>
+        <div class="form-group">
+            <label for="Address">Address</label>
+            <input class="form-control" type="text" name="Address" value="@Model.Address" required />
+        </div>
+        <div class="form-group">
+            <label for="WardId">Ward ID</label>
+            <input class="form-control" type="number" name="WardId" value="@Model.WardId" required />
+        </div>
+
+
+        <div>
+            <button type="submit" class="btn btn-success text-white">Add</button>
+            <a class="btn btn-primary text-white" asp-controller="Patient" asp-action="Index" role="button">Back</a>
+
+        </div>
+    </form>
+</div>
+
+    </div>

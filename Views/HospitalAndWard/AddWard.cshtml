@@ -1,0 +1,33 @@
+﻿@model HospitalModel
+
+<div>
+
+    <br />
+    <h1 class="text-info">Add a Hospital</h1>
+    <br />
+
+    <div class="container" style="padding:30px">
+        <form asp-action="AddW" method="post" class="main-form needs-validation">
+
+            <div class="form-group">
+                <label for="WardId">Ward ID</label>
+                <input class="form-control" type="number" name="WardId" value="" required />
+            </div>
+            <div class="form-group">
+                <label for="WardCategory">Category</label>
+                <input class="form-control" type="text" name="WardCategory" value="" required />
+            </div>
+            <div class="form-group">
+                <label for="WardCapacity">Capacity</label>
+                <input class="form-control" type="number" name="WardCapacity" value="" required />
+            </div>
+
+            <div>
+                <button type="submit" class="btn btn-success text-white">Add</button>
+                <a class="btn btn-primary text-white" asp-controller="HospitalAndWard" asp-action="Index" role="button">Back</a>
+
+            </div>
+        </form>
+    </div>
+
+</div>

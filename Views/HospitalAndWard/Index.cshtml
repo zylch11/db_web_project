@@ -1,0 +1,85 @@
+﻿@model HospitalAndWardViewModel
+@{
+    ViewData["Title"] = "Manage the Hospitals and wards";
+}
+
+<br />
+<div class="container row p-0 m-0">
+    <div class="col-9">
+        <h2 class="text-info">Hospitals List</h2>
+    </div>
+    <div class="col-3">
+        <a asp-action="AddHospital" class="btn btn-info form-control text-white">Add a Hospital</a>
+    </div>
+    <br />
+
+    @* Inserting the Table *@
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Hospital ID</th>
+            <th scope="col">Hospital Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Misc.</th>
+        </tr>
+    </thead>
+
+
+    @foreach (var d in Model.Hospitals)
+    {
+        <tr>
+            <td>@d.HospitalId</td>
+            <td>@d.HospitalName</td>
+            <td>@d.HospitalAddress</td>
+            <td>
+                <a class="btn btn-success btn-sm" asp-action="EditHospital" asp-route-hospitalId="@d.HospitalId">Edit</a>
+            </td>
+        </tr>
+    }
+</table>
+
+
+</div>
+
+
+
+
+
+
+<br />
+<div class="container row p-0 m-0">
+    <div class="col-9">
+        <h2 class="text-info">Wards List</h2>
+    </div>
+    <div class="col-3">
+        <a asp-action="AddWard" class="btn btn-info form-control text-white">Add a Ward</a>
+    </div>
+    <br />
+
+    @* Inserting the Table *@
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Ward ID</th>
+                <th scope="col">Category</th>
+                <th scope="col">Capacity</th>
+                <th scope="col">Misc.</th>
+            </tr>
+        </thead>
+
+
+        @foreach (var d in Model.Wards)
+        {
+    <tr>
+        <td>@d.WardId</td>
+        <td>@d.WardCategory</td>
+        <td>@d.WardCapacity</td>
+        <td>
+            <a asp-action="EditWard" class="btn btn-success btn-sm" asp-route-id="@d.WardId">Edit</a>
+        </td>
+    </tr>
+        }
+    </table>
+
+
+</div>
