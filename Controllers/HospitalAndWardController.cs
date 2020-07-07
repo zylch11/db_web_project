@@ -92,9 +92,9 @@ namespace db_web_project.Controllers
             return RedirectToAction("Index");
         }
 
-        public async Task<IActionResult> EditHospital(int _hospitalId)
+        public async Task<IActionResult> EditHospital(int Id)
         {
-            hospital = await _hospitalAndWardService.FindHospitalAsync(_hospitalId);
+            hospital = await _hospitalAndWardService.FindHospitalAsync(Id);
             return View(hospital);
         }
 
@@ -114,9 +114,9 @@ namespace db_web_project.Controllers
             return RedirectToAction("Index");
         }
 
-        public async Task<IActionResult> EditWard(int _wardId)
+        public async Task<IActionResult> EditWard(int Id)
         {
-            var ward = await _hospitalAndWardService.FindWardAsync(_wardId);
+            var ward = await _hospitalAndWardService.FindWardAsync(Id);
             return View(ward);
         }
 
