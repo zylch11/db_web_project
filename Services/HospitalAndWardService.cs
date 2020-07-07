@@ -55,9 +55,8 @@ namespace db_web_project.Services
 
         public async Task<bool> EditHospitalAsync(HospitalModel _hospital)
         {
-            //var hospital = await _context.Hospitals.FindAsync(_hospital.HospitalId);
-            var Id = _hospital.HospitalId;
-            var hospital = await FindHospitalAsync(Id);
+            var hospital = await _context.Hospitals.FindAsync(_hospital.HospitalId);
+            hospital.HospitalId = _hospital.HospitalId;
             hospital.HospitalName = _hospital.HospitalName;
             hospital.HospitalAddress = _hospital.HospitalAddress;
 

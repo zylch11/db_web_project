@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace db_web_project.Data.Migrations
 {
-    public partial class PatientsHospitalsWardsTablesAdded : Migration
+    public partial class Patients_Wards_HospitalsAdded : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,10 +11,10 @@ namespace db_web_project.Data.Migrations
                 name: "Hospitals",
                 columns: table => new
                 {
-                    HospitalId = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    HospitalId = table.Column<Guid>(nullable: false),
                     HospitalName = table.Column<string>(nullable: true),
-                    HospitalAddress = table.Column<string>(nullable: true)
+                    HospitalAddress = table.Column<string>(nullable: true),
+                    HospitalCategory = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -43,8 +43,8 @@ namespace db_web_project.Data.Migrations
                 name: "Wards",
                 columns: table => new
                 {
-                    WardId = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    WardId = table.Column<Guid>(nullable: false),
+                    WardName = table.Column<string>(nullable: true),
                     WardCategory = table.Column<string>(nullable: true),
                     WardCapacity = table.Column<int>(nullable: false)
                 },

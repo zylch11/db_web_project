@@ -6,6 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\Migrations\20200611130324_PatientsHospitalsWardsTablesAdded.cs" />
+    <Compile Remove="Data\Migrations\20200611130324_PatientsHospitalsWardsTablesAdded.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200707224438_Patients_Wards_HospitalsAdded.cs" />
+    <Compile Remove="Data\Migrations\20200707224438_Patients_Wards_HospitalsAdded.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
   </ItemGroup>
 

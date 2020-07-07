@@ -245,11 +245,14 @@ namespace db_web_project.Data.Migrations
 
             modelBuilder.Entity("db_web_project.Models.HospitalModel", b =>
                 {
-                    b.Property<int>("HospitalId")
+                    b.Property<Guid>("HospitalId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("HospitalAddress")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("HospitalCategory")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("HospitalName")
@@ -294,14 +297,17 @@ namespace db_web_project.Data.Migrations
 
             modelBuilder.Entity("db_web_project.Models.WardModel", b =>
                 {
-                    b.Property<int>("WardId")
+                    b.Property<Guid>("WardId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("WardCapacity")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("WardCategory")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("WardName")
                         .HasColumnType("TEXT");
 
                     b.HasKey("WardId");

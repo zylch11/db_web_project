@@ -9,10 +9,12 @@ namespace db_web_project.Models
     public class HospitalModel
     {
         [Key]
-        public int HospitalId { get; set; }
+        public Guid HospitalId { get; set; }
 
         public string HospitalName { get; set; }
 
         public string HospitalAddress { get; set; }
+
+        public string HospitalCategory { get; set; }
     }
 }

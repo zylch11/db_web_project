@@ -9,7 +9,9 @@ namespace db_web_project.Models
     public class WardModel
     {
         [Key]
-        public int WardId { get; set; }
+        public Guid WardId { get; set; }
+
+        public string WardName { get; set; }
 
         public string WardCategory { get; set; }
 
