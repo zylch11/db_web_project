@@ -258,6 +258,9 @@ namespace db_web_project.Data.Migrations
                     b.Property<string>("HospitalName")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("Id")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("HospitalId");
 
                     b.ToTable("Hospitals");
@@ -287,8 +290,8 @@ namespace db_web_project.Data.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("WardId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("WardName")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 

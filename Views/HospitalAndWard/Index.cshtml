@@ -14,29 +14,31 @@
     <br />
 
     @* Inserting the Table *@
-<table class="table table-striped">
-    <thead class="thead-dark">
-        <tr>
-            <th scope="col">Hospital ID</th>
-            <th scope="col">Hospital Name</th>
-            <th scope="col">Address</th>
-            <th scope="col">Misc.</th>
-        </tr>
-    </thead>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Hospital Id</th>
+                <th scope="col">Hospital Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Category</th>
+                <th scope="col">Misc.</th>
+            </tr>
+        </thead>
 
 
-    @foreach (var d in Model.Hospitals)
-    {
-        <tr>
-            <td>@d.HospitalId</td>
-            <td>@d.HospitalName</td>
-            <td>@d.HospitalAddress</td>
-            <td>
-                <a class="btn btn-success btn-sm" asp-action="EditHospital" asp-route-id="@d.HospitalId">Edit</a>
-            </td>
-        </tr>
-    }
-</table>
+        @foreach (var d in Model.Hospitals)
+        {
+            <tr>
+                <td>@d.Id</td>
+                <td>@d.HospitalName</td>
+                <td>@d.HospitalAddress</td>
+                <td>@d.HospitalCategory</td>
+                <td>
+                    <a class="btn btn-success btn-sm" asp-action="EditHospital" asp-route-id="@d.HospitalId">Edit</a>
+                </td>
+            </tr>
+        }
+    </table>
 
 
 </div>
@@ -60,7 +62,7 @@
     <table class="table table-striped">
         <thead class="thead-dark">
             <tr>
-                <th scope="col">Ward ID</th>
+                <th scope="col">Ward Name</th>
                 <th scope="col">Category</th>
                 <th scope="col">Capacity</th>
                 <th scope="col">Misc.</th>
@@ -70,14 +72,14 @@
 
         @foreach (var d in Model.Wards)
         {
-    <tr>
-        <td>@d.WardId</td>
-        <td>@d.WardCategory</td>
-        <td>@d.WardCapacity</td>
-        <td>
-            <a asp-action="EditWard" class="btn btn-success btn-sm" asp-route-id="@d.WardId">Edit</a>
-        </td>
-    </tr>
+            <tr>
+                <td>@d.WardName</td>
+                <td>@d.WardCategory</td>
+                <td>@d.WardCapacity</td>
+                <td>
+                    <a asp-action="EditWard" class="btn btn-success btn-sm" asp-route-id="@d.WardId">Edit</a>
+                </td>
+            </tr>
         }
     </table>
 

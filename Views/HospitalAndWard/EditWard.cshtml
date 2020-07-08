@@ -9,9 +9,10 @@
     <div class="container" style="padding:30px">
         <form asp-action="EditW" method="post" class="main-form needs-validation">
 
+            <input type="hidden" asp-for="WardId" name="WardId" value="@Model.WardId" />
             <div class="form-group">
-                <label for="WardId">Ward ID</label>
-                <input class="form-control" type="number" name="WardId" value="@Model.WardId" required />
+                <label for="WardName">Ward Name</label>
+                <input class="form-control" type="text" name="WardName" value="@Model.WardName" required />
             </div>
             <div class="form-group">
                 <label for="WardCategory">Category</label>

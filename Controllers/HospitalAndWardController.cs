@@ -92,7 +92,7 @@ namespace db_web_project.Controllers
             return RedirectToAction("Index");
         }
 
-        public async Task<IActionResult> EditHospital(int Id)
+        public async Task<IActionResult> EditHospital(Guid Id)
         {
             hospital = await _hospitalAndWardService.FindHospitalAsync(Id);
             return View(hospital);
@@ -114,7 +114,7 @@ namespace db_web_project.Controllers
             return RedirectToAction("Index");
         }
 
-        public async Task<IActionResult> EditWard(int Id)
+        public async Task<IActionResult> EditWard(Guid Id)
         {
             var ward = await _hospitalAndWardService.FindWardAsync(Id);
             return View(ward);

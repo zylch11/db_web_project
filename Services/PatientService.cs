@@ -50,7 +50,7 @@ namespace db_web_project.Services
             patient.CNIC = _patient.CNIC;
             patient.Age = _patient.Age;
             patient.Address = _patient.Address;
-            patient.WardId = _patient.WardId;
+            patient.WardName = _patient.WardName;
 
             var saveResult = await _context.SaveChangesAsync();
             return saveResult == 1;

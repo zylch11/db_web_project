@@ -33,6 +33,8 @@ namespace db_web_project.Services
 
         public async Task<bool> AddHospitalAsync(HospitalModel _hospital)
         {
+            _hospital.HospitalId = new Guid();
+
             _context.Hospitals.Add(_hospital);
 
             var saveResult = await _context.SaveChangesAsync();
@@ -41,13 +43,15 @@ namespace db_web_project.Services
 
         public async Task<bool> AddWardAsync(WardModel _ward)
         {
+            _ward.WardId = new Guid();
+
             _context.Wards.Add(_ward);
 
             var saveResult = await _context.SaveChangesAsync();
             return saveResult == 1;
         }
 
-        public async Task<HospitalModel> FindHospitalAsync(int _hospitalId)
+        public async Task<HospitalModel> FindHospitalAsync(Guid _hospitalId)
         {
             hospital = await _context.Hospitals.FindAsync(_hospitalId);
             return hospital;
@@ -56,7 +60,7 @@ namespace db_web_project.Services
         public async Task<bool> EditHospitalAsync(HospitalModel _hospital)
         {
             var hospital = await _context.Hospitals.FindAsync(_hospital.HospitalId);
-            hospital.HospitalId = _hospital.HospitalId;
+            hospital.Id = _hospital.Id;
             hospital.HospitalName = _hospital.HospitalName;
             hospital.HospitalAddress = _hospital.HospitalAddress;
 
@@ -64,7 +68,7 @@ namespace db_web_project.Services
             return saveResult == 1;
         }
 
-        public async Task<WardModel> FindWardAsync(int _wardId)
+        public async Task<WardModel> FindWardAsync(Guid _wardId)
         {
             ward = await _context.Wards.FindAsync(_wardId);
             return ward;
@@ -73,7 +77,7 @@ namespace db_web_project.Services
         public async Task<bool> EditWardAsync(WardModel _ward)
         {
             var ward = await _context.Wards.FindAsync(_ward.WardId);
-            ward.WardId = _ward.WardId;
+            ward.WardName = _ward.WardName;
             ward.WardCapacity = _ward.WardCapacity;
             ward.WardCategory = ward.WardCategory;
 

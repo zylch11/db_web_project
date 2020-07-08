@@ -9,17 +9,22 @@
     <div class="container" style="padding:30px">
         <form asp-action="EditHosp" method="post" class="main-form needs-validation">
 
+            <input type="hidden" asp-for="HospitalId" name="HospitalId" value="@Model.HospitalId" />
             <div class="form-group">
-                <label for="HospitalID">Hospital ID</label>
-                <input class="form-control" type="number" name="HospitalID" value="@Model.HospitalId" required />
+                <label for="Id">Hospital Id</label>
+                <input class="form-control" type="number" name="Id" value="@Model.Id" required />
             </div>
             <div class="form-group">
-                <label for="HospitalName">Name</label>
+                <label for="HospitalName">Hospital Name</label>
                 <input class="form-control" type="text" name="HospitalName" value="@Model.HospitalName" required />
             </div>
             <div class="form-group">
                 <label for="HospitalAddress">Address</label>
                 <input class="form-control" type="text" name="HospitalAddress" value="@Model.HospitalAddress" required />
+            </div>
+            <div class="form-group">
+                <label for="HospitalCategory">Category</label>
+                <input class="form-control" type="text" name="HospitalCategory" value="@Model.HospitalCategory" required />
             </div>
 
             <div>

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace db_web_project.Data.Migrations
 {
-    public partial class Patients_Wards_HospitalsAdded : Migration
+    public partial class AddedPatientsHospitalsWardsTable : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,6 +12,7 @@ namespace db_web_project.Data.Migrations
                 columns: table => new
                 {
                     HospitalId = table.Column<Guid>(nullable: false),
+                    Id = table.Column<int>(nullable: false),
                     HospitalName = table.Column<string>(nullable: true),
                     HospitalAddress = table.Column<string>(nullable: true),
                     HospitalCategory = table.Column<string>(nullable: true)
@@ -32,7 +33,7 @@ namespace db_web_project.Data.Migrations
                     Age = table.Column<int>(nullable: false),
                     Gender = table.Column<string>(nullable: true),
                     Address = table.Column<string>(nullable: true),
-                    WardId = table.Column<int>(nullable: false)
+                    WardName = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

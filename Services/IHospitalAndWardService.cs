@@ -14,8 +14,8 @@ namespace db_web_project.Services
         Task<bool> AddHospitalAsync(HospitalModel _hospital);
         Task<bool> AddWardAsync(WardModel _ward);
 
-        Task<HospitalModel> FindHospitalAsync(int _hospitalId);
-        Task<WardModel> FindWardAsync(int _wardId);
+        Task<HospitalModel> FindHospitalAsync(Guid _hospitalId);
+        Task<WardModel> FindWardAsync(Guid _wardId);
 
         Task<bool> EditHospitalAsync(HospitalModel _hospital);
         Task<bool> EditWardAsync(WardModel _ward);

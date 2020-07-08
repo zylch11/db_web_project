@@ -11,6 +11,8 @@ namespace db_web_project.Models
         [Key]
         public Guid HospitalId { get; set; }
 
+        public int Id { get; set; }
+
         public string HospitalName { get; set; }
 
         public string HospitalAddress { get; set; }

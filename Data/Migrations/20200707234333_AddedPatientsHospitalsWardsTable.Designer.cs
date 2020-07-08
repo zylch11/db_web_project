@@ -9,8 +9,8 @@ using db_web_project.Data;
 namespace db_web_project.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200707224536_Patients_Wards_HospitalsAdded")]
-    partial class Patients_Wards_HospitalsAdded
+    [Migration("20200707234333_AddedPatientsHospitalsWardsTable")]
+    partial class AddedPatientsHospitalsWardsTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -260,6 +260,9 @@ namespace db_web_project.Data.Migrations
                     b.Property<string>("HospitalName")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("Id")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("HospitalId");
 
                     b.ToTable("Hospitals");
@@ -289,8 +292,8 @@ namespace db_web_project.Data.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("WardId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("WardName")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
